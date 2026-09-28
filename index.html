@@ -65,9 +65,34 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 
 /* --- otwarcie: podział typograficzny --- */
 .otw{padding-block:clamp(38px,6vw,84px)}
-.otw .w{display:grid;grid-template-columns:1.16fr .84fr;gap:clamp(28px,5vw,72px);align-items:end}
-@media (max-width:900px){.otw .w{grid-template-columns:1fr;gap:30px;align-items:start}}
+.otw .w{display:grid;grid-template-columns:1.16fr .84fr;
+  grid-template-areas:"tyt foto" "reszta foto";
+  column-gap:clamp(28px,5vw,72px);align-items:start}
+.tyt{grid-area:tyt}
+.reszta{grid-area:reszta}
+.foto{grid-area:foto;margin:0;align-self:stretch;display:flex;flex-direction:column}
+.foto img{width:100%;height:100%;min-height:400px;object-fit:cover;flex:1}
+@media (max-width:900px){
+  .otw .w{grid-template-columns:1fr;grid-template-areas:"tyt" "foto" "reszta";row-gap:28px}
+  .foto{display:block;align-self:auto}
+  .foto img{height:auto;min-height:0;aspect-ratio:4/5}
+}
+@media (max-width:760px){
+  .otw{padding-block:0 clamp(26px,6vw,38px)}
+  .otw .w{grid-template-areas:"foto" "reszta";row-gap:0;padding-inline:0}
+  .foto{position:relative}
+  .foto img{aspect-ratio:4/5}
+  .foto::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(7,15,11,0) 26%,rgba(7,15,11,.34) 56%,rgba(7,15,11,.88) 100%)}
+  .tyt{grid-area:foto;align-self:end;position:relative;z-index:2;
+    padding:0 clamp(20px,5vw,28px) 26px}
+  .tyt .meta{color:var(--zloto-j)}
+  .reszta{padding:28px clamp(20px,5vw,28px) 0}
+  .podpis{display:none}
+}
 .otw h1{font-size:clamp(40px,7.1vw,84px);margin:18px 0 0}
+@media (max-width:760px){.otw h1{color:#FFFDF8;font-size:clamp(34px,8.6vw,46px);margin:12px 0 0}
+  .otw h1 i{color:var(--zloto-j)}}
 .otw h1 i{font-style:italic;color:var(--szmaragd)}
 .otw .pod{margin:26px 0 0;max-width:38ch;color:var(--szary);font-size:clamp(15px,1.6vw,17px)}
 .fakty{margin-top:34px;border-top:1px solid var(--linia)}
@@ -75,8 +100,6 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .fakty dt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--zloto)}
 .fakty dd{margin:0;font-size:15.5px}
 .fakty a{text-decoration:none;border-bottom:1px solid var(--zloto)}
-.otw figure{margin:0}
-.otw figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .podpis{margin-top:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--szary)}
 
 /* --- pas pełnej szerokości --- */
@@ -174,10 +197,19 @@ footer a{color:#DCD2BC}
 </div></header>
 
 <section class="otw"><div class="w">
-  <div>
-    <div class="meta up d1">Kaszuby &middot; Nowy Klincz pod Kościerzyną</div>
-    <h1 class="up d2">Sala, w której<br>odbywa się <i>jedno</i><br>wesele naraz</h1>
-    <p class="pod up d3">Zajazd Florencja to sala bankietowa, restauracja i noclegi w jednym miejscu. Restaurację poznaliście z Kuchennych Rewolucji.</p>
+  <figure class="foto up d1">
+    <img src="img/sala-900.webp"
+         srcset="img/sala-560.webp 560w, img/sala-900.webp 900w, img/sala-1200.webp 1200w"
+         sizes="(max-width:900px) 100vw, 44vw"
+         width="900" height="1125" alt="Sala weselna w Zajezdzie Florencja nakryta do przyjecia" fetchpriority="high">
+    <div class="podpis">Sala bankietowa &middot; przyjęcie na 100 osób</div>
+  </figure>
+  <div class="tyt">
+    <div class="meta up d2">Kaszuby &middot; Nowy Klincz pod Kościerzyną</div>
+    <h1 class="up d3">Sala, w której<br>odbywa się <i>jedno</i><br>wesele naraz</h1>
+  </div>
+  <div class="reszta">
+    <p class="pod up d4">Zajazd Florencja to sala bankietowa, restauracja i noclegi w jednym miejscu. Restaurację poznaliście z Kuchennych Rewolucji.</p>
     <dl class="fakty up d4">
       <div><dt>Adres</dt><dd>Spacerowa 2, 83-400 Nowy Klincz</dd></div>
       <div><dt>Telefon</dt><dd><a href="tel:+48663403721">663 403 721</a></dd></div>
@@ -185,13 +217,6 @@ footer a{color:#DCD2BC}
       <div><dt>Pon. i wt.</dt><dd>nieczynne</dd></div>
     </dl>
   </div>
-  <figure class="up d3">
-    <img src="img/sala-900.webp"
-         srcset="img/sala-560.webp 560w, img/sala-900.webp 900w, img/sala-1200.webp 1200w"
-         sizes="(max-width:900px) 100vw, 46vw"
-         width="900" height="1125" alt="Sala weselna w Zajeździe Florencja nakryta do przyjęcia" fetchpriority="high">
-    <div class="podpis">Sala bankietowa &middot; przyjęcie na 100 osób</div>
-  </figure>
 </div></section>
 
 <div class="pas">
@@ -354,7 +379,7 @@ footer a{color:#DCD2BC}
  function zmierz(){
   try{
    var n=performance.getEntriesByType('navigation')[0],r=performance.getEntriesByType('resource'),b=(n&&(n.encodedBodySize||n.transferSize))||0;
-   for(var i=0;i<r.length;i++)b+=r[i].encodedBodySize||r[i].transferSize||0;
+   var wid={};for(var i=0;i<r.length;i++){var k=r[i].name.split('?')[0];if(wid[k])continue;wid[k]=1;b+=r[i].encodedBodySize||r[i].transferSize||0;}
    var ms=n?Math.round(n.domContentLoadedEventEnd):Math.round(performance.now());
    if(b>last){last=b;el.textContent='wczytane '+Math.round(b/1024)+' KB / '+ms+' ms';}
   }catch(e){}
