@@ -353,8 +353,8 @@ footer a{color:#DCD2BC}
  var el=document.getElementById('waga'),last=0;
  function zmierz(){
   try{
-   var n=performance.getEntriesByType('navigation')[0],r=performance.getEntriesByType('resource'),b=(n&&n.transferSize)||0;
-   for(var i=0;i<r.length;i++)b+=r[i].transferSize||0;
+   var n=performance.getEntriesByType('navigation')[0],r=performance.getEntriesByType('resource'),b=(n&&(n.encodedBodySize||n.transferSize))||0;
+   for(var i=0;i<r.length;i++)b+=r[i].encodedBodySize||r[i].transferSize||0;
    var ms=n?Math.round(n.domContentLoadedEventEnd):Math.round(performance.now());
    if(b>last){last=b;el.textContent='wczytane '+Math.round(b/1024)+' KB / '+ms+' ms';}
   }catch(e){}
