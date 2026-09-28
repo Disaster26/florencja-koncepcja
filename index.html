@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zajazd Florencja - sala weselna i restauracja, Nowy Klincz koło Kościerzyny</title>
+<meta name="description" content="Sala bankietowa, restauracja i noclegi na Kaszubach. Wesela, komunie, chrzciny i stypy. Spacerowa 2, Nowy Klincz. Tel. 663 403 721.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --szmaragd:#14382B; --las:#0B211A; --noc:#070F0B;
+  --zloto:#B8942F; --zloto-j:#D9B85C;
+  --krem:#F6F2E8; --krem2:#EDE7D8; --biel:#FFFDF8;
+  --tusz:#14120E; --szary:#6E6757; --linia:#DCD3BE;
+  --eo:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--krem);color:var(--tusz);
+  font-family:Jost,system-ui,-apple-system,Segoe UI,sans-serif;font-weight:300;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.w{width:100%;max-width:1240px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0;line-height:1.04;
+  letter-spacing:-.005em;text-wrap:balance}
+.meta{font-family:Jost,sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--zloto)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ——— pasek demo ——— */
+.demo{background:var(--noc);color:#B5AD98;font-size:12px;letter-spacing:.04em}
+.demo .w{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-block:9px}
+.demo b{color:var(--zloto-j);font-weight:400}
+
+/* ——— nagłówek ——— */
+.top{border-bottom:1px solid var(--linia)}
+.top .w{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:20px}
+.marka{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.6vw,28px);letter-spacing:.1em;line-height:1}
+.marka i{font-style:italic;color:var(--zloto)}
+.top nav{display:flex;gap:clamp(14px,2.4vw,30px);font-size:13px;letter-spacing:.09em;text-transform:uppercase;flex-wrap:wrap}
+.top nav a{text-decoration:none;color:var(--szary);padding-block:4px;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+@media (hover:hover){.top nav a:hover{color:var(--tusz);border-color:var(--zloto)}}
+
+/* ——— otwarcie: podział typograficzny ——— */
+.otw{padding-block:clamp(38px,6vw,84px)}
+.otw .w{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,72px);align-items:end}
+@media (max-width:900px){.otw .w{grid-template-columns:1fr;gap:30px;align-items:start}}
+.otw h1{font-size:clamp(44px,8.6vw,104px);margin:18px 0 0}
+.otw h1 i{font-style:italic;color:var(--szmaragd)}
+.otw .pod{margin:26px 0 0;max-width:38ch;color:var(--szary);font-size:clamp(15px,1.6vw,17px)}
+.fakty{margin-top:34px;border-top:1px solid var(--linia)}
+.fakty div{display:grid;grid-template-columns:118px 1fr;gap:14px;padding-block:13px;border-bottom:1px solid var(--linia);align-items:baseline}
+.fakty dt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--zloto)}
+.fakty dd{margin:0;font-size:15.5px}
+.fakty a{text-decoration:none;border-bottom:1px solid var(--zloto)}
+.otw figure{margin:0}
+.otw figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.podpis{margin-top:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--szary)}
+
+/* ——— pas pełnej szerokości ——— */
+.pas img{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:21/9;object-fit:cover}
+@media (max-width:700px){.pas img{aspect-ratio:3/2}}
+
+/* ——— kalendarz terminów ——— */
+.terminy{padding-block:clamp(44px,6.5vw,92px);background:var(--krem2)}
+.terminy .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.terminy h2{font-size:clamp(30px,4.6vw,54px)}
+.terminy .head p{margin:10px 0 0;color:var(--szary);max-width:40ch;font-size:15px}
+.legenda{display:flex;gap:18px;font-size:12px;letter-spacing:.05em;flex-wrap:wrap;color:var(--szary)}
+.legenda i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%;vertical-align:baseline}
+.mies{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:980px){.mies{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.mies{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:400px){.mies{grid-template-columns:1fr}}
+.m{background:var(--biel);border:1px solid var(--linia);padding:15px 15px 12px}
+.m h3{font-family:Jost,sans-serif;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--szary);margin-bottom:12px}
+.m ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.m li{display:flex;align-items:center;gap:9px;font-size:14.5px}
+.kropka{width:9px;height:9px;border-radius:50%;flex:none}
+.wolny .kropka{background:var(--zloto)}
+.zajety{color:#A9A192;text-decoration:line-through;text-decoration-thickness:1px}
+.zajety .kropka{background:#CFC7B4}
+.terminy .stopka-info{margin-top:26px;font-size:12.5px;color:var(--szary);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;text-decoration:none;
+  font-family:Jost,sans-serif;font-size:12.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--zloto);background:var(--zloto);color:#14120E;cursor:pointer;
+  transition:transform .16s var(--eo),background .2s,color .2s}
+.btn:active{transform:scale(.975)}
+@media (hover:hover){.btn:hover{background:transparent;color:var(--tusz)}}
+.btn-l{background:transparent;color:var(--tusz)}
+@media (hover:hover){.btn-l:hover{background:var(--zloto);color:#14120E}}
+
+/* ——— sekcje treściowe ——— */
+.sek{padding-block:clamp(42px,6vw,88px)}
+.sek .w{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(26px,5vw,68px);align-items:center}
+.sek.odwr .w{grid-template-columns:1.08fr .92fr}
+@media (max-width:900px){.sek .w,.sek.odwr .w{grid-template-columns:1fr;gap:28px}}
+.sek h2{font-size:clamp(30px,4.6vw,54px);margin-bottom:18px}
+.sek p{color:var(--szary);max-width:44ch;margin:0 0 14px}
+.sek figure{margin:0}
+.sek figure img{width:100%;object-fit:cover}
+.karta-menu{list-style:none;margin:26px 0 30px;padding:0}
+.karta-menu li{display:grid;grid-template-columns:1fr auto;gap:14px;padding-block:11px;border-bottom:1px solid var(--linia);
+  align-items:baseline;font-size:15.5px}
+.karta-menu li:first-child{border-top:1px solid var(--linia)}
+.karta-menu span:last-child{color:var(--zloto);font-size:13px;letter-spacing:.1em}
+
+/* ——— ciemna ——— */
+.ciemna{background:var(--noc);color:#E4DCC9}
+.ciemna h2,.ciemna h3{color:#F7F2E5}
+.ciemna p{color:#A79E88}
+.ciemna .karta-menu li{border-color:rgba(184,148,47,.22)}
+.ciemna .meta{color:var(--zloto-j)}
+.ciemna .btn-l{color:#F7F2E5;border-color:var(--zloto-j)}
+@media (hover:hover){.ciemna .btn-l:hover{background:var(--zloto-j);color:#0B211A}}
+
+/* ——— stopka ——— */
+footer{background:var(--las);color:#9E9682;padding-block:clamp(38px,5vw,64px);font-size:14.5px}
+footer .w{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px}
+@media (max-width:820px){footer .w{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer .w{grid-template-columns:1fr}}
+footer h3{font-size:26px;color:#F7F2E5;margin-bottom:12px}
+footer h4{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--zloto-j);font-weight:400;margin:0 0 10px}
+footer p{margin:0 0 5px}
+footer a{color:#DCD2BC}
+.fdol{border-top:1px solid rgba(184,148,47,.2);margin-top:34px;padding-top:18px;font-size:12px;color:#6F6957}
+
+.up{opacity:0;transform:translateY(14px);animation:up .62s var(--eo) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.13s}.d3{animation-delay:.21s}.d4{animation-delay:.29s}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .up{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="demo"><div class="w">
+  <span><b>Szkic / demo</b> &mdash; propozycja nowej strony dla Zajazdu Florencja</span>
+  <span class="num" id="waga"></span>
+</div></div>
+
+<header class="top"><div class="w">
+  <div class="marka">Zajazd <i>Florencja</i></div>
+  <nav>
+    <a href="#terminy">Wolne terminy</a>
+    <a href="#wesela">Przyjęcia</a>
+    <a href="#restauracja">Restauracja</a>
+    <a href="#relaks">Strefa relaksu</a>
+  </nav>
+</div></header>
+
+<section class="otw"><div class="w">
+  <div>
+    <div class="meta up d1">Kaszuby &middot; Nowy Klincz pod Kościerzyną</div>
+    <h1 class="up d2">Sala, w której<br>odbywa się <i>jedno</i><br>wesele naraz</h1>
+    <p class="pod up d3">Zajazd Florencja to sala bankietowa, restauracja i noclegi w jednym miejscu. Restaurację poznaliście z Kuchennych Rewolucji.</p>
+    <dl class="fakty up d4">
+      <div><dt>Adres</dt><dd>Spacerowa 2, 83-400 Nowy Klincz</dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+48663403721">663 403 721</a></dd></div>
+      <div><dt>Restauracja</dt><dd class="num">śr&ndash;czw 12&ndash;17 &middot; pt 12&ndash;18 &middot; sob 12&ndash;20 &middot; niedz 12&ndash;18</dd></div>
+      <div><dt>Pon. i wt.</dt><dd>nieczynne</dd></div>
+    </dl>
+  </div>
+  <figure class="up d3">
+    <img src="img/sala-900.webp"
+         srcset="img/sala-560.webp 560w, img/sala-900.webp 900w, img/sala-1200.webp 1200w"
+         sizes="(max-width:900px) 100vw, 46vw"
+         width="900" height="1125" alt="Sala weselna w Zajeździe Florencja nakryta do przyjęcia" fetchpriority="high">
+    <div class="podpis">Sala bankietowa &middot; przyjęcie na 100 osób</div>
+  </figure>
+</div></section>
+
+<div class="pas">
+  <img src="img/pas-1600.webp" srcset="img/pas-900.webp 900w, img/pas-1600.webp 1600w"
+       sizes="100vw" width="1600" height="686" loading="lazy" alt="Przyjęcie weselne w Zajeździe Florencja">
+</div>
+
+<section class="terminy" id="terminy"><div class="w">
+  <div class="head">
+    <div>
+      <div class="meta">Sezon 2027</div>
+      <h2>Wolne soboty</h2>
+      <p>Najczęstsze pierwsze pytanie przez telefon. Tutaj odpowiedź jest, zanim ktoś zdąży zadzwonić.</p>
+    </div>
+    <div class="legenda">
+      <span><i style="background:#B8942F"></i>wolny termin</span>
+      <span><i style="background:#CFC7B4"></i>zajęty</span>
+    </div>
+  </div>
+  <div class="mies">
+  <div class="m"><h3>Maj 2027</h3><ul>
+  <li class="wolny"><i class="kropka"></i><span class="num">1.05</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">8.05</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">15.05</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">22.05</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">29.05</span></li>
+  </ul></div>
+  <div class="m"><h3>Czerwiec 2027</h3><ul>
+  <li class="zajety"><i class="kropka"></i><span class="num">5.06</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">12.06</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">19.06</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">26.06</span></li>
+  </ul></div>
+  <div class="m"><h3>Lipiec 2027</h3><ul>
+  <li class="wolny"><i class="kropka"></i><span class="num">3.07</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">10.07</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">17.07</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">24.07</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">31.07</span></li>
+  </ul></div>
+  <div class="m"><h3>Sierpień 2027</h3><ul>
+  <li class="zajety"><i class="kropka"></i><span class="num">7.08</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">14.08</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">21.08</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">28.08</span></li>
+  </ul></div>
+  <div class="m"><h3>Wrzesień 2027</h3><ul>
+  <li class="zajety"><i class="kropka"></i><span class="num">4.09</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">11.09</span></li>
+  <li class="zajety"><i class="kropka"></i><span class="num">18.09</span></li>
+  <li class="wolny"><i class="kropka"></i><span class="num">25.09</span></li>
+  </ul></div>
+  </div>
+  <div class="stopka-info">
+    <a class="btn" href="tel:+48663403721">Zarezerwuj termin</a>
+    <span>Dane w tym szkicu są przykładowe. Na docelowej stronie kalendarz uzupełniacie Państwo sami, jednym kliknięciem.</span>
+  </div>
+</div></section>
+
+<section class="sek" id="wesela"><div class="w">
+  <figure>
+    <img src="img/wesele-800.webp" srcset="img/wesele-480.webp 480w, img/wesele-800.webp 800w"
+         sizes="(max-width:900px) 100vw, 42vw" width="800" height="1067" loading="lazy"
+         style="aspect-ratio:3/4" alt="Dekoracja stołu weselnego">
+  </figure>
+  <div>
+    <div class="meta">Przyjęcia</div>
+    <h2>Wesela, komunie, chrzciny i stypy</h2>
+    <p>Jedno przyjęcie w terminie. Bez dzielenia sali, bez drugiej imprezy za ścianą i bez pośpiechu, kiedy trzeba posprzątać na kolejną.</p>
+    <ul class="karta-menu">
+      <li><span>Sala bankietowa</span><span class="num">do 100 osób</span></li>
+      <li><span>Menu ustalane indywidualnie</span><span>z degustacją</span></li>
+      <li><span>Noclegi dla gości</span><span>na miejscu</span></li>
+      <li><span>Ogród z wiatą i miejscem na ognisko</span><span>w cenie</span></li>
+    </ul>
+    <a class="btn btn-l" href="#terminy">Zobacz wolne terminy</a>
+  </div>
+</div></section>
+
+<section class="ciemna" id="restauracja">
+  <div class="pas">
+    <img src="img/danie-1400.webp" srcset="img/danie-900.webp 900w, img/danie-1400.webp 1400w"
+         sizes="100vw" width="1400" height="600" loading="lazy" alt="Danie serwowane w restauracji Florencja">
+  </div>
+  <div class="sek odwr"><div class="w">
+    <div>
+      <div class="meta">Restauracja</div>
+      <h2>Kuchnia, po której nas zapamiętano</h2>
+      <p>Byliśmy w Kuchennych Rewolucjach. Co z tego zostało, najłatwiej sprawdzić przy stole w sobotnie popołudnie.</p>
+      <ul class="karta-menu">
+        <li><span>Środa &ndash; czwartek</span><span class="num">12:00&ndash;17:00</span></li>
+        <li><span>Piątek</span><span class="num">12:00&ndash;18:00</span></li>
+        <li><span>Sobota</span><span class="num">12:00&ndash;20:00</span></li>
+        <li><span>Niedziela</span><span class="num">12:00&ndash;18:00</span></li>
+      </ul>
+      <a class="btn btn-l" href="tel:+48663403721">Zarezerwuj stolik</a>
+    </div>
+    <figure>
+      <img src="img/wnetrze-900.webp" srcset="img/wnetrze-560.webp 560w, img/wnetrze-900.webp 900w"
+           sizes="(max-width:900px) 100vw, 46vw" width="900" height="675" loading="lazy"
+           style="aspect-ratio:4/3" alt="Wnętrze restauracji Florencja">
+    </figure>
+  </div></div>
+</section>
+
+<section class="sek" id="relaks"><div class="w">
+  <figure>
+    <img src="img/spa-800.webp" srcset="img/spa-480.webp 480w, img/spa-800.webp 800w"
+         sizes="(max-width:900px) 100vw, 42vw" width="800" height="1067" loading="lazy"
+         style="aspect-ratio:3/4" alt="Strefa relaksu w ogrodzie Zajazdu Florencja">
+  </figure>
+  <div>
+    <div class="meta">Nowość w ofercie</div>
+    <h2>Ogród tylko dla Was</h2>
+    <p>Sauna, jacuzzi i balia w prywatnej części ogrodu. Rezerwujecie całą przestrzeń, nie miejsce w kolejce.</p>
+    <ul class="karta-menu">
+      <li><span>Sauna</span><span>rozgrzana przed przyjazdem</span></li>
+      <li><span>Jacuzzi i balia</span><span>pod gołym niebem</span></li>
+      <li><span>Wiata, grill, ognisko</span><span>w cenie</span></li>
+      <li><span>Dla gości nocujących</span><span>pakiety</span></li>
+    </ul>
+    <a class="btn btn-l" href="tel:+48663403721">Zapytaj o pakiet</a>
+  </div>
+</div></section>
+
+<footer><div class="w">
+  <div>
+    <h3>Zajazd Florencja</h3>
+    <p>Restaurant &amp; Cafe</p>
+    <p>ul. Spacerowa 2</p>
+    <p>83-400 Nowy Klincz</p>
+    <p style="margin-top:12px"><a href="tel:+48663403721">663 403 721</a></p>
+    <p><a href="mailto:florencja@zajazdflorencja.pl">florencja@zajazdflorencja.pl</a></p>
+  </div>
+  <div>
+    <h4>Godziny</h4>
+    <p class="num">Pon.&ndash;wt. nieczynne</p>
+    <p class="num">Śr.&ndash;czw. 12&ndash;17</p>
+    <p class="num">Piątek 12&ndash;18</p>
+    <p class="num">Sobota 12&ndash;20</p>
+    <p class="num">Niedziela 12&ndash;18</p>
+  </div>
+  <div>
+    <h4>Na miejscu</h4>
+    <p>Sala bankietowa</p>
+    <p>Restauracja</p>
+    <p>Noclegi</p>
+    <p>Strefa relaksu</p>
+  </div>
+  <div class="fdol" style="grid-column:1/-1">
+    Szkic przygotowany przez Łukasza Stasiaka. Zdjęcia pochodzą z obecnej strony zajazdflorencja.pl.
+  </div>
+</div></footer>
+
+<script>
+(function(){
+ function zmierz(){
+  try{
+   var n=performance.getEntriesByType('navigation')[0],r=performance.getEntriesByType('resource'),b=(n&&n.transferSize)||0;
+   for(var i=0;i<r.length;i++)b+=r[i].transferSize||0;
+   var ms=n?Math.round(n.domContentLoadedEventEnd):Math.round(performance.now());
+   if(b>0)document.getElementById('waga').textContent=Math.round(b/1024)+' KB / '+ms+' ms';
+  }catch(e){}
+ }
+ if(document.readyState==='complete')setTimeout(zmierz,500);
+ else addEventListener('load',function(){setTimeout(zmierz,500);});
+})();
+</script>
+</body>
+</html>
