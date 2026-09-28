@@ -30,12 +30,12 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .meta{font-family:Jost,sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--zloto)}
 .num{font-variant-numeric:tabular-nums}
 
-/* ——— pasek demo ——— */
+/* --- pasek demo --- */
 .demo{background:var(--noc);color:#B5AD98;font-size:12px;letter-spacing:.04em}
 .demo .w{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-block:9px}
 .demo b{color:var(--zloto-j);font-weight:400}
 
-/* ——— nagłówek ——— */
+/* --- nagłówek --- */
 .top{border-bottom:1px solid var(--linia)}
 .top .w{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:20px}
 .marka{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.6vw,28px);letter-spacing:.1em;line-height:1}
@@ -43,12 +43,31 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .top nav{display:flex;gap:clamp(14px,2.4vw,30px);font-size:13px;letter-spacing:.09em;text-transform:uppercase;flex-wrap:wrap}
 .top nav a{text-decoration:none;color:var(--szary);padding-block:4px;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
 @media (hover:hover){.top nav a:hover{color:var(--tusz);border-color:var(--zloto)}}
+.top nav a.tel{border:1px solid var(--tusz);color:var(--tusz);padding:9px 16px;font-size:12px;
+  letter-spacing:.12em;transition:transform .16s var(--eo),background .2s,color .2s,border-color .2s}
+.top nav a.tel:active{transform:scale(.975)}
+@media (hover:hover){.top nav a.tel:hover{background:var(--tusz);color:var(--krem);border-color:var(--tusz)}}
+@media (max-width:760px){.top nav a:not(.tel){display:none}
+  .top .w{align-items:center;flex-wrap:nowrap}}
 
-/* ——— otwarcie: podział typograficzny ——— */
+/* pasek z telefonem na komorce */
+.zadzwon{display:none}
+@media (max-width:760px){
+  body{padding-bottom:62px}
+  .zadzwon{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    align-items:center;justify-content:center;gap:10px;text-decoration:none;
+    background:var(--szmaragd);color:#F7F2E5;font-size:15px;letter-spacing:.08em;
+    padding:15px 18px;padding-bottom:calc(15px + env(safe-area-inset-bottom));
+    transition:transform .16s var(--eo)}
+  .zadzwon:active{transform:scale(.99)}
+  .zadzwon b{font-weight:400;font-variant-numeric:tabular-nums}
+}
+
+/* --- otwarcie: podział typograficzny --- */
 .otw{padding-block:clamp(38px,6vw,84px)}
-.otw .w{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,72px);align-items:end}
+.otw .w{display:grid;grid-template-columns:1.16fr .84fr;gap:clamp(28px,5vw,72px);align-items:end}
 @media (max-width:900px){.otw .w{grid-template-columns:1fr;gap:30px;align-items:start}}
-.otw h1{font-size:clamp(44px,8.6vw,104px);margin:18px 0 0}
+.otw h1{font-size:clamp(40px,7.1vw,84px);margin:18px 0 0}
 .otw h1 i{font-style:italic;color:var(--szmaragd)}
 .otw .pod{margin:26px 0 0;max-width:38ch;color:var(--szary);font-size:clamp(15px,1.6vw,17px)}
 .fakty{margin-top:34px;border-top:1px solid var(--linia)}
@@ -60,11 +79,11 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .otw figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .podpis{margin-top:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--szary)}
 
-/* ——— pas pełnej szerokości ——— */
+/* --- pas pełnej szerokości --- */
 .pas img{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:21/9;object-fit:cover}
 @media (max-width:700px){.pas img{aspect-ratio:3/2}}
 
-/* ——— kalendarz terminów ——— */
+/* --- kalendarz terminów --- */
 .terminy{padding-block:clamp(44px,6.5vw,92px);background:var(--krem2)}
 .terminy .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
 .terminy h2{font-size:clamp(30px,4.6vw,54px)}
@@ -74,7 +93,6 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .mies{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 @media (max-width:980px){.mies{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:620px){.mies{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:400px){.mies{grid-template-columns:1fr}}
 .m{background:var(--biel);border:1px solid var(--linia);padding:15px 15px 12px}
 .m h3{font-family:Jost,sans-serif;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   color:var(--szary);margin-bottom:12px}
@@ -94,7 +112,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .btn-l{background:transparent;color:var(--tusz)}
 @media (hover:hover){.btn-l:hover{background:var(--zloto);color:#14120E}}
 
-/* ——— sekcje treściowe ——— */
+/* --- sekcje treściowe --- */
 .sek{padding-block:clamp(42px,6vw,88px)}
 .sek .w{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(26px,5vw,68px);align-items:center}
 .sek.odwr .w{grid-template-columns:1.08fr .92fr}
@@ -109,7 +127,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .karta-menu li:first-child{border-top:1px solid var(--linia)}
 .karta-menu span:last-child{color:var(--zloto);font-size:13px;letter-spacing:.1em}
 
-/* ——— ciemna ——— */
+/* --- ciemna --- */
 .ciemna{background:var(--noc);color:#E4DCC9}
 .ciemna h2,.ciemna h3{color:#F7F2E5}
 .ciemna p{color:#A79E88}
@@ -118,7 +136,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0
 .ciemna .btn-l{color:#F7F2E5;border-color:var(--zloto-j)}
 @media (hover:hover){.ciemna .btn-l:hover{background:var(--zloto-j);color:#0B211A}}
 
-/* ——— stopka ——— */
+/* --- stopka --- */
 footer{background:var(--las);color:#9E9682;padding-block:clamp(38px,5vw,64px);font-size:14.5px}
 footer .w{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px}
 @media (max-width:820px){footer .w{grid-template-columns:1fr 1fr}}
@@ -140,7 +158,7 @@ footer a{color:#DCD2BC}
 <body>
 
 <div class="demo"><div class="w">
-  <span><b>Szkic / demo</b> &mdash; propozycja nowej strony dla Zajazdu Florencja</span>
+  <span><b>Szkic / demo</b> - propozycja nowej strony dla Zajazdu Florencja</span>
   <span class="num" id="waga"></span>
 </div></div>
 
@@ -151,6 +169,7 @@ footer a{color:#DCD2BC}
     <a href="#wesela">Przyjęcia</a>
     <a href="#restauracja">Restauracja</a>
     <a href="#relaks">Strefa relaksu</a>
+    <a class="tel" href="tel:+48663403721">663 403 721</a>
   </nav>
 </div></header>
 
@@ -162,7 +181,7 @@ footer a{color:#DCD2BC}
     <dl class="fakty up d4">
       <div><dt>Adres</dt><dd>Spacerowa 2, 83-400 Nowy Klincz</dd></div>
       <div><dt>Telefon</dt><dd><a href="tel:+48663403721">663 403 721</a></dd></div>
-      <div><dt>Restauracja</dt><dd class="num">śr&ndash;czw 12&ndash;17 &middot; pt 12&ndash;18 &middot; sob 12&ndash;20 &middot; niedz 12&ndash;18</dd></div>
+      <div><dt>Restauracja</dt><dd class="num">śr-czw 12-17 &middot; pt 12-18 &middot; sob 12-20 &middot; niedz 12-18</dd></div>
       <div><dt>Pon. i wt.</dt><dd>nieczynne</dd></div>
     </dl>
   </div>
@@ -263,10 +282,10 @@ footer a{color:#DCD2BC}
       <h2>Kuchnia, po której nas zapamiętano</h2>
       <p>Byliśmy w Kuchennych Rewolucjach. Co z tego zostało, najłatwiej sprawdzić przy stole w sobotnie popołudnie.</p>
       <ul class="karta-menu">
-        <li><span>Środa &ndash; czwartek</span><span class="num">12:00&ndash;17:00</span></li>
-        <li><span>Piątek</span><span class="num">12:00&ndash;18:00</span></li>
-        <li><span>Sobota</span><span class="num">12:00&ndash;20:00</span></li>
-        <li><span>Niedziela</span><span class="num">12:00&ndash;18:00</span></li>
+        <li><span>Środa - czwartek</span><span class="num">12:00-17:00</span></li>
+        <li><span>Piątek</span><span class="num">12:00-18:00</span></li>
+        <li><span>Sobota</span><span class="num">12:00-20:00</span></li>
+        <li><span>Niedziela</span><span class="num">12:00-18:00</span></li>
       </ul>
       <a class="btn btn-l" href="tel:+48663403721">Zarezerwuj stolik</a>
     </div>
@@ -298,6 +317,8 @@ footer a{color:#DCD2BC}
   </div>
 </div></section>
 
+<a class="zadzwon" href="tel:+48663403721">Zadzwoń <b>663 403 721</b></a>
+
 <footer><div class="w">
   <div>
     <h3>Zajazd Florencja</h3>
@@ -309,11 +330,11 @@ footer a{color:#DCD2BC}
   </div>
   <div>
     <h4>Godziny</h4>
-    <p class="num">Pon.&ndash;wt. nieczynne</p>
-    <p class="num">Śr.&ndash;czw. 12&ndash;17</p>
-    <p class="num">Piątek 12&ndash;18</p>
-    <p class="num">Sobota 12&ndash;20</p>
-    <p class="num">Niedziela 12&ndash;18</p>
+    <p class="num">Pon.-wt. nieczynne</p>
+    <p class="num">Śr.-czw. 12-17</p>
+    <p class="num">Piątek 12-18</p>
+    <p class="num">Sobota 12-20</p>
+    <p class="num">Niedziela 12-18</p>
   </div>
   <div>
     <h4>Na miejscu</h4>
@@ -329,16 +350,20 @@ footer a{color:#DCD2BC}
 
 <script>
 (function(){
+ var el=document.getElementById('waga'),last=0;
  function zmierz(){
   try{
    var n=performance.getEntriesByType('navigation')[0],r=performance.getEntriesByType('resource'),b=(n&&n.transferSize)||0;
    for(var i=0;i<r.length;i++)b+=r[i].transferSize||0;
    var ms=n?Math.round(n.domContentLoadedEventEnd):Math.round(performance.now());
-   if(b>0)document.getElementById('waga').textContent=Math.round(b/1024)+' KB / '+ms+' ms';
+   if(b>last){last=b;el.textContent='wczytane '+Math.round(b/1024)+' KB / '+ms+' ms';}
   }catch(e){}
  }
- if(document.readyState==='complete')setTimeout(zmierz,500);
- else addEventListener('load',function(){setTimeout(zmierz,500);});
+ var tik=setInterval(zmierz,600);setTimeout(function(){clearInterval(tik);},8000);
+ var czeka=false;
+ addEventListener('scroll',function(){if(czeka)return;czeka=true;
+   setTimeout(function(){czeka=false;zmierz();},400);},{passive:true});
+ if(document.readyState==='complete')zmierz();else addEventListener('load',zmierz);
 })();
 </script>
 </body>
